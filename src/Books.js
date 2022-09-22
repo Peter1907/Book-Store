@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Book from './components/Book';
+import Form from './components/Form';
 
 function Books() {
   const [bookList] = useState([
@@ -32,7 +33,9 @@ function Books() {
           author={book.author}
           genre={book.genre}
         />
-      )}
+        )}
+        <div className="line"></div>
+        <Form />
     </div>
   );
 }
