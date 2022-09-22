@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const linkStyle = {
@@ -14,6 +14,6 @@ const Navbar = () => {
       <Link style={linkStyle} to="/categories">CATEGORIES</Link>
     </div>
   );
-}
+};
 
 export default Navbar;

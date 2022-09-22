@@ -22,7 +22,7 @@ root.render(
         <Route path="/categories" element={<Categories />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

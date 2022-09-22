@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = (props) => {
   const { title, author, genre } = props;
@@ -12,9 +13,9 @@ const Book = (props) => {
           <h4 className="author">{author}</h4>
           <div className="buttons">
             <button type="button">Comments</button>
-            <p className='separator'></p>
+            <p className="separator" />
             <button type="button">Remove</button>
-            <p className='separator'></p>
+            <p className="separator" />
             <button type="button">Edit</button>
           </div>
         </div>
@@ -33,6 +34,12 @@ const Book = (props) => {
       </div>
     </div>
   );
+};
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default Book;
