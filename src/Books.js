@@ -26,12 +26,12 @@ function Books() {
     <div className="book-list">
       {bookList.map((book) => (
         <Book
-        key={book.id}
-        title={book.title}
-        author={book.author}
-        genre={book.genre}
+          key={book.id}
+          title={book.title}
+          author={book.author}
+          genre={book.genre}
         />
-      ),)}
+      ))}
       <div className="line" />
       <Form />
     </div>

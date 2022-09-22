@@ -20,7 +20,7 @@ const Book = (props) => {
           </div>
         </div>
         <div className="status">
-          <div className="Oval-2"></div>
+          <div className="Oval-2" />
           <div>
             <p className="percentage">60%</p>
             <p className="completed">Completed</p>
