@@ -9,20 +9,20 @@ const booksReducer = (state = [], action) => {
       return ([
         ...state,
         action.data,
-      ])
+      ]);
     default:
       return state;
   }
 };
 
-const addBook = ({ id, title, author, genre }) => ({
+const addBook = (newBook) => ({
   type: ADD,
   data: {
-    id,
-    title,
-    author,
-    genre,
-  }
+    id: newBook.id,
+    title: newBook.title,
+    author: newBook.author,
+    genre: newBook.genre,
+  },
 });
 
 const removeBook = (id) => ({
