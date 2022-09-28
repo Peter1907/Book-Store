@@ -11,7 +11,8 @@ const Categories = () => {
       <button
         type="button"
         onClick={() => dispatch(checkState())}
-      >Check Status
+      >
+        Check Status
       </button>
       <p>{info}</p>
     </div>
