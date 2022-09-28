@@ -1,14 +1,35 @@
-const ADD = 'books/books/ADD';
-const REMOVE = 'books/booksREMOVE';
+import { v4 as uuid } from 'uuid';
 
-const booksReducer = (state = [], action) => {
+const ADD = 'book-store/books/ADD';
+const REMOVE = 'book-store/books/REMOVE';
+
+const booklist = [
+  {
+    id: uuid(),
+    title: 'Atomic Habits',
+    author: 'James Clear',
+    genre: 'Self-help',
+  }, {
+    id: uuid(),
+    title: '40 Laws of Power',
+    author: 'Robert Greene',
+    genre: 'Self-help',
+  }, {
+    id: uuid(),
+    title: 'Never Split the Difference',
+    author: 'Chris Voss',
+    genre: 'Self-help',
+  },
+];
+
+const booksReducer = (state = booklist, action) => {
   switch (action.type) {
     case REMOVE:
       return state.filter((book) => book.id !== action.id);
     case ADD:
       return ([
         ...state,
-        action.data,
+        action.newBook,
       ]);
     default:
       return state;
@@ -17,12 +38,7 @@ const booksReducer = (state = [], action) => {
 
 const addBook = (newBook) => ({
   type: ADD,
-  data: {
-    id: newBook.id,
-    title: newBook.title,
-    author: newBook.author,
-    genre: newBook.genre,
-  },
+  newBook,
 });
 
 const removeBook = (id) => ({
@@ -30,4 +46,5 @@ const removeBook = (id) => ({
   id,
 });
 
-export { addBook, removeBook, booksReducer };
+export { addBook, removeBook };
+export default booksReducer;

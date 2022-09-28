@@ -6,21 +6,25 @@ import {
   Route,
 }
   from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Books from './Books';
 import Navbar from './components/Navbar';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import Categories from './pages/Categories';
+import store from './redux/configureStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
+      <Provider store = {store}>
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
 );
