@@ -23,7 +23,7 @@ const Form = () => {
           e.target.childNodes[1].value = '';
           e.target.childNodes[2].value = '';
           modify({
-            id: uuid(),
+            item_id: uuid(),
             title: '',
             author: '',
             category: 'Unknown',

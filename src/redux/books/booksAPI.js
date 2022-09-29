@@ -10,8 +10,8 @@ const getBooks = createAsyncThunk(
     const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/xNlCE7tF6v1eIN42ZfCc/books');
     const data = await response.json();
     return data;
-  }
-)
+  },
+);
 
 const addBookAPI = createAsyncThunk(
   ADD,
@@ -23,8 +23,8 @@ const addBookAPI = createAsyncThunk(
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-  }
-)
+  },
+);
 
 const removeBookAPI = createAsyncThunk(
   REMOVE,
@@ -32,7 +32,12 @@ const removeBookAPI = createAsyncThunk(
     await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/xNlCE7tF6v1eIN42ZfCc/books/${id}`, {
       method: 'DELETE',
     });
-  }
-)
+  },
+);
 
-export { GET, getBooks, addBookAPI,removeBookAPI };
+export {
+  GET,
+  getBooks,
+  addBookAPI,
+  removeBookAPI
+};

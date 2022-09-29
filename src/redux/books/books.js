@@ -5,14 +5,14 @@ const REMOVE = 'book-store/books/REMOVE';
 
 const booksReducer = (state = [], action) => {
   switch (action.type) {
-    case REMOVE + '/fulfilled':
+    case `${REMOVE}/fulfilled`:
       return state.filter((book) => book.item_id !== action.meta.arg);
-    case ADD + '/fulfilled':
+    case `${ADD}/fulfilled`:
       return ([
         ...state,
         action.meta.arg,
-      ])
-    case GET + '/fulfilled':
+      ]);
+    case `${GET}/fulfilled`:
       return (
         Object.keys(action.payload).map((key) => {
           const {
@@ -22,10 +22,10 @@ const booksReducer = (state = [], action) => {
           } = action.payload[key][0];
           return ({
             item_id: key,
-            title: title,
-            author: author,
-            category: category,
-          })
+            title,
+            author,
+            category,
+          });
         })
       );
     default:
@@ -43,5 +43,10 @@ const removeBook = (id) => ({
   id,
 });
 
-export { addBook, removeBook, ADD, REMOVE };
+export {
+  addBook,
+  removeBook,
+  ADD,
+  REMOVE
+};
 export default booksReducer;
