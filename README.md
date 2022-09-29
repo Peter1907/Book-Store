@@ -4,11 +4,16 @@ Book Store
 
 # Description the project.
 
-Building a "Website about books" app using React.
+Building a "Book Store" app using React with redux.
+The app has features like adding & removeing books using an API
 
 ## Built With
 
-React
+- JavaScript
+- SASS
+- HTML
+- WebPack
+- React
 
 ## Screenshots
 
@@ -20,9 +25,11 @@ The project is still in development, check this section later.
 
 ## Getting Started
 
+### Setup
 - You need to have Node, npm & git installed.
 - Clone the repository using this command `git clone https://github.com/Peter1907/book-store.git`.
-- You can open the "math-magicians" folder using VSCode or any other editor.
+-You can also [Download the ZIP from this location](https://github.com/Peter1907/book-store/archive/refs/heads/dev.zip)
+- You can open the "book-store" folder using VSCode or any other editor.
 - Use `npm i` to install all required node modeules.
 - Use `npm start` command to open a live server.
 

@@ -1,36 +1,33 @@
-import { v4 as uuid } from 'uuid';
+import { GET } from './booksAPI';
 
 const ADD = 'book-store/books/ADD';
 const REMOVE = 'book-store/books/REMOVE';
 
-const booklist = [
-  {
-    id: uuid(),
-    title: 'Atomic Habits',
-    author: 'James Clear',
-    genre: 'Self-help',
-  }, {
-    id: uuid(),
-    title: '40 Laws of Power',
-    author: 'Robert Greene',
-    genre: 'Self-help',
-  }, {
-    id: uuid(),
-    title: 'Never Split the Difference',
-    author: 'Chris Voss',
-    genre: 'Self-help',
-  },
-];
-
-const booksReducer = (state = booklist, action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
-    case REMOVE:
-      return state.filter((book) => book.id !== action.id);
-    case ADD:
+    case `${REMOVE}/fulfilled`:
+      return state.filter((book) => book.item_id !== action.meta.arg);
+    case `${ADD}/fulfilled`:
       return ([
         ...state,
-        action.newBook,
+        action.meta.arg,
       ]);
+    case `${GET}/fulfilled`:
+      return (
+        Object.keys(action.payload).map((key) => {
+          const {
+            title,
+            author,
+            category,
+          } = action.payload[key][0];
+          return ({
+            item_id: key,
+            title,
+            author,
+            category,
+          });
+        })
+      );
     default:
       return state;
   }
@@ -46,5 +43,10 @@ const removeBook = (id) => ({
   id,
 });
 
-export { addBook, removeBook };
+export {
+  addBook,
+  removeBook,
+  ADD,
+  REMOVE,
+};
 export default booksReducer;

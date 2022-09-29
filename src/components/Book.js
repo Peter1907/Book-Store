@@ -1,13 +1,14 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBookAPI } from '../redux/books/booksAPI';
 
 const Book = ({
-  id,
+  item_id,
   title,
   author,
-  genre,
+  category,
 }) => {
   const dispatch = useDispatch();
 
@@ -15,7 +16,7 @@ const Book = ({
     <div className="book">
       <div className="info">
         <div className="headings">
-          <h4 className="genre">{genre}</h4>
+          <h4 className="genre">{category}</h4>
           <h2 className="title">{title}</h2>
           <h4 className="author">{author}</h4>
           <div className="buttons">
@@ -23,7 +24,7 @@ const Book = ({
             <p className="separator" />
             <button
               type="button"
-              onClick={() => dispatch(removeBook(id))}
+              onClick={() => dispatch(removeBookAPI(item_id))}
             >
               Remove
             </button>
@@ -49,10 +50,10 @@ const Book = ({
 };
 
 Book.propTypes = {
-  id: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookAPI } from '../redux/books/booksAPI';
 
 const Form = () => {
   const dispatch = useDispatch();
   const [book, modify] = useState({
-    id: uuid(),
+    item_id: uuid(),
     title: '',
     author: '',
-    genre: 'Unknown',
+    category: 'Unknown',
   });
 
   return (
@@ -23,12 +23,12 @@ const Form = () => {
           e.target.childNodes[1].value = '';
           e.target.childNodes[2].value = '';
           modify({
-            id: uuid(),
+            item_id: uuid(),
             title: '',
             author: '',
-            genre: 'Unknown',
+            category: 'Unknown',
           });
-          dispatch(addBook(book));
+          dispatch(addBookAPI(book));
         }}
       >
         <input
@@ -54,10 +54,10 @@ const Form = () => {
           })}
         />
         <input
-          className="genre-field"
+          className="category-field"
           type="text"
-          placeholder="Genre"
-          name="genre"
+          placeholder="Category"
+          name="category"
           onChange={(e) => modify({
             ...book,
             [e.target.name]: e.target.value,
