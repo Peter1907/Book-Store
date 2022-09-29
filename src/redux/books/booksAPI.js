@@ -39,5 +39,5 @@ export {
   GET,
   getBooks,
   addBookAPI,
-  removeBookAPI
+  removeBookAPI,
 };

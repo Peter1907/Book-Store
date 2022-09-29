@@ -47,6 +47,6 @@ export {
   addBook,
   removeBook,
   ADD,
-  REMOVE
+  REMOVE,
 };
 export default booksReducer;
