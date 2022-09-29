@@ -23,10 +23,6 @@ button:active {
   margin-bottom: 50px;
 }
 
-.active {
-  color: black;
-}
-
 .book {
   width: 65vw;
   height: 10.625rem;

@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className="nav-bar">
-      <h1 style={{ margin: 0, color: '#0290ff'}}>PB Bookstore</h1>
+      <h1 style={{ margin: 0, color: '#0290ff' }}>PB Bookstore</h1>
       <Link style={linkStyle} to="/">BOOKS</Link>
       <Link style={linkStyle} to="/categories">CATEGORIES</Link>
     </div>
