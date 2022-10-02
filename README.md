@@ -10,7 +10,7 @@ The app has features like adding & removeing books using an API
 ## Built With
 
 - JavaScript
-- SASS
+- CSS
 - HTML
 - WebPack
 - React
