@@ -1,17 +1,24 @@
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Book from './components/Book';
 import Form from './components/Form';
 import { getBooks } from './redux/books/booksAPI';
+import { getStoredData } from './redux/books/books';
 
 function Books() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getBooks());
-  }, [dispatch]);
+  let bookList = useSelector((state) => state.books);
+  const DATA = localStorage.getItem('DATA');
+  
+  const updateList = () => {
+    DATA ? dispatch(getStoredData()) : dispatch(getBooks());
+  };
 
-  const bookList = useSelector((state) => state.books, shallowEqual);
+  useEffect(() => {
+    updateList();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="book-list">

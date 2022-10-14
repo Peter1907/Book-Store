@@ -13,10 +13,10 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import Categories from './pages/Categories';
 import store from './redux/configureStore';
+// import { Table } from './components/Table';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <Navbar />
       <Provider store={store}>
@@ -24,9 +24,9 @@ root.render(
           <Route path="/" element={<Books />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
+        {/* <Table /> */}
       </Provider>
-    </BrowserRouter>
-  </React.StrictMode>,
+    </BrowserRouter>,
 );
 
 // If you want to start measuring performance in your app, pass a function

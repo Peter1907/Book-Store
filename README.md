@@ -56,6 +56,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - A big kudos to everyone who worked hard to make this project a success.
+- <a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Freepik - Flaticon</a>.
 
 ## 📝 License
 
