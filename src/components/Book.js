@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBookAPI } from '../redux/books/booksAPI';
+import Circle from './Circle/Circle';
 
 const Book = ({
   item_id,
@@ -33,7 +34,7 @@ const Book = ({
           </div>
         </div>
         <div className="status">
-          <div className="Oval-2" />
+          <Circle />
           <div>
             <p className="percentage">60%</p>
             <p className="completed">Completed</p>

@@ -13,6 +13,10 @@ button:active {
 }
 
 .nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: white;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.493));
   color: antiquewhite;
@@ -21,6 +25,11 @@ button:active {
   align-items: center;
   padding: 25px 10vw;
   margin-bottom: 50px;
+  z-index: 101;
+}
+
+.book-list {
+  margin-top: 10rem;
 }
 
 .book {
