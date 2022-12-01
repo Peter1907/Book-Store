@@ -8,21 +8,9 @@
   transform: scale(0.8);
 }
 
-.circleWrap .circle .mask,
-.circleWrap .circle .fill {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  border-radius: 50%;
-}
-
 .mask .fill {
-  clip: rect(0px, 75px, 150px, 0px);
+  clip: rect(0, 75px, 150px, 0);
   background-color: #0290ff;
-}
-
-.circlWrap .circle .mask {
-  clip: rect(0px, 150px, 150px, 75px);
 }
 
 .mask.full,
@@ -31,10 +19,23 @@
   transform: rotate(135deg);
 }
 
-@keyframes fill{
+.circleWrap .circle .mask,
+.circleWrap .circle .fill {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circlWrap .circle .mask {
+  clip: rect(0, 150px, 150px, 75px);
+}
+
+@keyframes fill {
   0% {
     transform: rotate(0deg);
   }
+  
   100% {
     transform: rotate(135deg);
   }
