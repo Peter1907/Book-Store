@@ -16,7 +16,7 @@ const booksReducer = (state = [], action) => {
     case `${ADD}/fulfilled`:
       return state;
     case `${GET}/fulfilled`:
-      const DATA = Object.keys(action.payload).map((key) => {
+      let DATA = Object.keys(action.payload).map((key) => {
         const {
           title,
           author,
