@@ -11,7 +11,7 @@ function Books() {
   const bookList = useSelector((state) => state.books);
   const DATA = localStorage.getItem('DATA');
 
-  const updateList = () => DATA ? dispatch(getStoredData()) : dispatch(getBooks());
+  const updateList = () => (DATA ? dispatch(getStoredData()) : dispatch(getBooks()));
 
   useEffect(() => {
     updateList();
