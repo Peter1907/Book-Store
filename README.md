@@ -14,6 +14,8 @@ The app has features like adding & removeing books using an API
 - HTML
 - WebPack
 - React
+- Redux
+- Netlify deployment
 
 ## Screenshots
 
@@ -21,7 +23,7 @@ The project is still in development, check this section later.
 
 ## Link to the Page
 
-The project is still in development, check this section later.
+[Live Demo](https://pb-book-store.netlify.app/)
 
 ## Getting Started
 
