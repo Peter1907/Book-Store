@@ -8,12 +8,10 @@ import { getStoredData } from './redux/books/books';
 function Books() {
   const dispatch = useDispatch();
 
-  let bookList = useSelector((state) => state.books);
+  const bookList = useSelector((state) => state.books);
   const DATA = localStorage.getItem('DATA');
-  
-  const updateList = () => {
-    DATA ? dispatch(getStoredData()) : dispatch(getBooks());
-  };
+
+  const updateList = () => (DATA ? dispatch(getStoredData()) : dispatch(getBooks()));
 
   useEffect(() => {
     updateList();

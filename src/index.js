@@ -17,16 +17,15 @@ import store from './redux/configureStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-      <Navbar />
-      <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<Books />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
-        {/* <Table /> */}
-      </Provider>
-    </BrowserRouter>,
+  <BrowserRouter>
+    <Navbar />
+    <Provider store={store}>
+      <Routes>
+        <Route path="/" element={<Books />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </Provider>
+  </BrowserRouter>,
 );
 
 // If you want to start measuring performance in your app, pass a function
