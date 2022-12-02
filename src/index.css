@@ -33,17 +33,16 @@ button:active {
 }
 
 .book {
-  width: 65vw;
-  height: 10.625rem;
+  max-width: 65vw;
   margin: 2.313rem auto 0;
-  padding: 2rem 5.188rem 1.625rem 1.688rem;
+  padding: 2rem 2.188rem 1.625rem 1.688rem;
   border-radius: 4px;
-  border: solid 1px var(--white);
   background-color: #fff;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.493));
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* flex-wrap: wrap; */
 }
 
 .info {
@@ -87,7 +86,8 @@ button:active {
 }
 
 .progress {
-  margin-left: 50px;
+  margin-left: 5rem;
+  flex-shrink: 0;
 }
 
 .progress button {
@@ -170,4 +170,116 @@ button:active {
 
 tr {
   border: 1px solid black;
+}
+
+@media screen and (max-width: 1280px) {
+  .book {
+    max-width: 70vw;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .form-container {
+    width: 75vw;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .book {
+    max-width: 75vw;
+  }
+
+  .form-container {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book {
+    max-width: 85vw;
+  }
+
+  .form-container {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .book {
+    max-width: 20rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .progress {
+    margin-left: 0;
+  }
+
+  .status {
+    margin-left: 0;
+  }
+
+  .info {
+    width: 85%;
+  }
+
+  .headings {
+    margin: auto;
+  }
+
+  .form-container {
+    width: 90vw;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .title-field,
+  .author-field,
+  .category-field {
+    width: 80%;
+  }
+
+  .form-container button {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .book {
+    max-width: 17rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .progress {
+    margin-left: 0;
+  }
+
+  .status {
+    margin-left: 0;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .headings {
+    margin: auto;
+  }
+
+  .form-container {
+    width: 90vw;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
 }

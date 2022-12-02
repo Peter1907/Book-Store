@@ -33,12 +33,12 @@ const Book = ({
             <button type="button">Edit</button>
           </div>
         </div>
-        <div className="status">
-          <Circle />
-          <div>
-            <p className="percentage">60%</p>
-            <p className="completed">Completed</p>
-          </div>
+      </div>
+      <div className="status">
+        <Circle />
+        <div>
+          <p className="percentage">60%</p>
+          <p className="completed">Completed</p>
         </div>
       </div>
       <div className="progress">
