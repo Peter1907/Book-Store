@@ -19,8 +19,9 @@ The app has features like adding & removeing books using an API
 
 ## Screenshots
 
-file:///home/x/Desktop/Microverse/book-store/SC01.jpg
-file:///home/x/Desktop/Microverse/book-store/SC02.jpg
+![](./media/SC01.jpg)
+![](media/SC02.jpg)
+
 
 ## Link to the Page
 
