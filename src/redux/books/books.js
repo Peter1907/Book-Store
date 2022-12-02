@@ -15,8 +15,8 @@ const booksReducer = (state = [], action) => {
       ]);
     case `${ADD}/fulfilled`:
       return state;
-    case `${GET}/fulfilled`:
-      let DATA = Object.keys(action.payload).map((key) => {
+    case `${GET}/fulfilled`: {
+      const DATA = Object.keys(action.payload).map((key) => {
         const {
           title,
           author,
@@ -31,6 +31,7 @@ const booksReducer = (state = [], action) => {
       });
       localStorage.setItem('DATA', JSON.stringify(DATA));
       return DATA;
+    }
     case GET_STORED:
       return action.payload;
     default:
